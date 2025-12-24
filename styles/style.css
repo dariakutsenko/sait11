@@ -1,0 +1,224 @@
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+}
+header {
+    background-color: #696969;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    position: relative;
+}
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+    margin: 0;
+    padding: 0;
+}
+nav ul li {
+    position: relative;
+}
+.submenu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #312e2e;
+    padding: 10px 0;
+    border-radius: 5px;
+    min-width: 180px;
+}
+.submenu li {
+    padding: 5px 15px;
+}
+
+.submenu li a {
+    color: #302d2d;
+    font-weight: normal;
+}
+.dropdown:hover .submenu {
+    display: block;
+}
+
+.logo {
+    font-weight: bold;
+    font-size: 20px;
+}
+nav {
+    display: flex;
+    gap: 15px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #f0f0f0;
+    font-weight: bold;
+}
+#menu-toggle {
+    display: none;
+}
+
+.burger {
+    display: none;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+/* Hero-блок */
+.hero {
+    background-color: #464444;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-size: 32px;
+    font-weight: bold;
+    text-align: center;
+}
+.main {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 20px;
+    border-radius: 20px;
+    background-color: #555353;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.main h2 {
+    text-align: center;
+    color: #eee5e5;
+}
+
+.main p {
+    line-height: 1.6;
+    color: #333;
+}
+
+footer {
+    background-color: #dcd0ff;
+    padding: 20px;
+    text-align: center;
+    color: #333;
+}
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    nav {
+        flex-direction: column;
+        width: 100%;
+        display: none;
+    }
+
+    nav a {
+        margin: 10px 0;
+    }
+
+    #menu-toggle:checked + .burger + nav {
+        display: flex;
+    }
+
+    .burger {
+        display: block;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+    }
+
+    .hero {
+        font-size: 28px;
+        height: 300px;
+        padding: 0 10px;
+    }
+
+    .main {
+        margin: 20px 10px;
+        padding: 15px;
+    }
+}
+
+
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        display: none;
+        width: 100%;
+    }
+
+    #menu-toggle:checked + .burger + nav ul {
+        display: flex;
+    }
+
+    .submenu {
+        position: static; 
+        display: none;
+        padding-left: 15px;
+    }
+
+    .dropdown input {
+        display: none; 
+    }
+
+    .dropdown:hover .submenu {
+        display: none; 
+    }
+}
+.menu, .submenu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.menu > li {
+    position: relative;
+    display: inline-block;
+    margin-right: 15px;
+}
+
+.menu a {
+    text-decoration: none;
+    color: #f0f0f0;
+    font-weight: bold;
+    padding: 5px 10px;
+    display: block;
+}
+
+.submenu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #afafaf;
+    border-radius: 5px;
+    min-width: 180px;
+    z-index: 10;
+}
+
+.submenu li a {
+    padding: 5px 15px;
+    color: #585656;
+}
+
+.dropdown:hover .submenu {
+    display: block;
+}
+
+#menu-toggle { display: none; }
+.burger { display: none; font-size: 30px; cursor: pointer; }
+
+@media (max-width: 768px){
+    .menu { display: none; flex-direction: column; width: 100%; }
+    #menu-toggle:checked + .burger + nav .menu { display: flex; }
+    .burger { display: block; }
+    .menu > li { display: block; margin-right: 0; }
+    .submenu { position: static; display: none; padding-left: 15px; }
+    .dropdown input { display: none; }
+}
